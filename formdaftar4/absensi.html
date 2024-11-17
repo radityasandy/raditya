@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absensi RFID</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Absensi Siswa Menggunakan RFID</h1>
+        <form id="absenform" action="absensi.php" method="POST">
+            <label for="rfid">Scan Kartu RFID:</label>
+            <input type="text" id="rfid" name="rfid" placeholder="Masukkan Kode RFID" required autofocus>
+            <button type="submit">Absen</button>
+        </form>
+        <div id="response">
+            <!-- Hasil absensi akan ditampilkan di sini jika ada-->
+        </div>
+    </div>
+    <script>
+        // Tangani submit form menggunakan JavaScript AJAX
+        document.getElementById("absenform").addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah reload halaman
+
+            // Ambil data dari form
+            const rfid = document.getElementById("rfid").value;
+
+            // Buat request AJAX
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "absensi.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Tampilkan respons dari server di dalam elemen #response
+                    document.getElementById("response").innerHTML = xhr.responseText;
+                    document.getElementById("rfid").value = ""; // Reset input
+                }
+            };
+
+            // Kirim data ke server
+            xhr.send("rfid=" + encodeURIComponent(rfid));
+        });
+    </script>
+</body>
+</html>

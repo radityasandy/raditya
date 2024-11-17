@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.absensi-form {
+    margin-top: 20px;
+}
+
+label {
+    font-size: 18px;
+    color: #555555;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 2px solid #dddddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #5f9ea0; /* Warna border ketika input dalam keadaan fokus */
+}
+
+button {
+    background-color: #5f9ea0; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    padding: 10px 20px; /* Padding pada tombol */
+    border: none; /* Menghilangkan border default */
+    border-radius: 5px; /* Membuat sudut tombol melengkung */
+    font-size: 16px; /* Ukuran font pada tombol */
+    cursor: pointer; /* Menunjukkan bahwa tombol dapat diklik */
+    transition: background-color 0.3s; /* Transisi halus untuk perubahan warna */
+}
+
+button:hover {
+    background-color: #4c8a87; /* Warna latar tombol saat di-hover */
+}
+
+.response {
+    margin-top: 20px; /* Jarak atas untuk respons */
+    font-size: 18px; /* Ukuran font untuk teks respons */
+    color: #333333; /* Warna teks respons */
+}
